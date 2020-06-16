@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <link rel="stylesheet" href="./css/styles.css">
+      <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{calculateTotalPopulation}} </h1>
+      <div class=“form-item”>
+        <label for="countryselect">Select Country</label>
+        <select v-model="selectedCountry" id="countryselect">
+          <option v-for="country in allCountries" :value="country">{{country.name}}</option>
+        </select>
+      </div>
+      <h4 v-if="selectedCountry">{{selectedCountry.name}}</h4>
+      <img src="{{selectedCountry.flag}}">
+    </div>
+  </body>
+</html>
